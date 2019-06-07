@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<title id="titre" > <%= title %> </title>
+		<SCRIPT LANGUAGE="Javascript" SRC="./Projet.js"></SCRIPT>
+		<script>
+			/**
+			*Cette fonction place un rectangle de couleur dans un canvas
+			*@param {nom du canvas, couleur du rectangle, position du rectangle} 
+			*/
+			const req = new XMLHttpRequest();
+
+		    function init(game, couleur,x ,y){
+				var g = document.getElementById(game);
+				var ctx = g.getContext('2d');
+				ctx.fillStyle = 'red';
+				ctx.fillRect(x, y, 750, 500);
+				ctx.fillStyle ='white';
+				ctx.font = "30px Verdana";
+	
+			}
+		
+			/**
+			*Cette fonction initialise 3 rectangles de couleur pour représenter les 3 différents jeux
+			*/
+			function affichage(){
+				var g = document.getElementById('En-tete');
+				var ctx = g.getContext('2d');
+				var gradient = ctx.createLinearGradient(0, 0, 550, 0);
+				ctx.font = "60px Verdana";
+				gradient.addColorStop("0"," magenta");
+				gradient.addColorStop("0.5", "blue");
+				gradient.addColorStop("1.0", "red");
+				ctx.fillStyle = gradient;
+				ctx.fillText('Nice to meet you', 20, 90);
+				init('affiche', 'green', 10, 30);
+				//req.open('POST', '/accueil', true);
+				//req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				//req.send("hello");
+			} 
+		
+
+		</script>
+	</head>
+	<style>
+		.text-center{
+			text-align:center;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		</style>
+	
+	<body onload='affichage()'>
+		<div class="text-center">
+			<canvas id="En-tete" width="550" height="110"></canvas>
+		</div>
+		<form action="/" method="post">
+			<div class="text-center">
+				<canvas id="affiche" width="800" height="80"></canvas>
+			</div>
+		</form>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[0]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[1]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[2]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[3]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[4]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[5]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[6]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[7]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[8]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[9]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[10]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[11]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[12]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[13]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[14]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[15]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[16]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[17]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[18]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[19]%></FONT>
+		</div>
+		<div class="text-center">
+			<STRONG> Moi : <%= convo[20]%>  </STRONG>
+		</div>
+		<div class="text-center">
+			<FONT COLOR="#850606">Bot : <%= convo[21]%></FONT>
+		</div>
+		<form action="/Hubert" method="post">
+			<div class="text-center">
+				<label for="msg">Tapez votre message :</label>
+				<input type="text" id="msg" name="msg">
+				<input type="submit" name="bouton1" value="Envoyer" width="300">
+				<input type="submit" name="bouton2" value="Reponse" width="300">
+			</div>
+		</form>
+		<form action="/" method="post">
+			<div class="text-center">
+				<input type="submit" name="Retour" value="Retour" height="500" width="300">	
+			</div>
+		</form>
+	</body>
+	
+</html>
+  

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<head>
+		<title id="titre"> <%= title %> </title>
+	</head>
+	<script>
+		
+        function init(bot, couleur,x ,y){
+			var g = document.getElementById(bot);
+			var ctx = g.getContext('2d');
+		    ctx.fillStyle = couleur;
+			ctx.fillRect(x, y, 200, 150);
+			ctx.fillStyle = 'white';
+			ctx.strokeStyle='black'
+			ctx.font = "35px Verdana";
+			ctx.fillText(bot, x+50, y+50);
+			ctx.strokeText(bot, x+50, y+50);
+		}
+		
+		
+		function affichage(){
+			var g = document.getElementById('En-tete');
+			var ctx = g.getContext('2d');
+			var gradient = ctx.createLinearGradient(0, 0, 1100, 0);
+			ctx.font = "65px Verdana";
+			gradient.addColorStop("0"," magenta");
+			gradient.addColorStop("0.5", "blue");
+			gradient.addColorStop("1.0", "red");
+			ctx.fillStyle = gradient;
+			ctx.fillText('Choose the bot you want to chat with !', 10, 90);
+			init('Steeve', 'magenta', 10, 30);
+			init('Eude', 'blue', 10, 30);
+			init('Hubert', 'red', 10, 30);
+			init('Yann', 'black', 10, 30);
+			init('Adam', 'green', 10, 30);
+		} 
+		
+
+
+	</script>
+
+	<style>
+		/**
+		*Permet d'aligner les textes au centre de l'écran
+		*/
+		.text-center{
+		    text-align:center;
+		    margin-left:auto;
+		    margin-right:auto;
+		}
+
+	</style>
+	<body onload='affichage()'>
+			<div>
+				<canvas id="En-tete" width="2000" height="150"></canvas>
+			</div>
+		<form action="/Steeve" method="post">
+			<div>
+				<canvas id="Steeve" width="250" height="100"></canvas>
+				<input type="submit" name="Steeve" value="Chattez avec Steeve ! " width="300">
+			</div>
+		</form>
+		<form action="/Eude" method="post">
+			<div>
+				<canvas id="Eude" width="250" height="100"></canvas>
+				<input type="submit" name="Eude" value="Chattez avec Eude ! " width="300">
+			</div>
+		</form>
+		<form action="/Hubert" method="post">
+			<div>
+				<canvas id="Hubert" width="250" height="100"></canvas>
+				<input type="submit" name="Hubert" value="Chattez avec Hubert ! " width="300">
+			</div>
+		</form>
+		<form action="/Yann" method="post">
+			<div>
+				<canvas id="Yann" width="250" height="100"></canvas>
+				<input type="submit" name="Yann" value="Chattez avec Yann ! " width="300">
+			</div>
+		</form>
+		<form action="/Adam" method="post">
+			<div>
+				<canvas id="Adam" width="250" height="100"></canvas>
+				<input type="submit" name="Adam" value="Chattez avec Adam ! " width="300">
+			</div>
+		</form>
+		
+	</body>
+	
+</html>
+  

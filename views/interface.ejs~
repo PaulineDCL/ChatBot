@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<title id="titre" > <%= title %> </title>
+		<SCRIPT LANGUAGE="Javascript" SRC="./Projet.js"></SCRIPT>
+		<script>
+			/**
+			*Cette fonction place un rectangle de couleur dans un canvas
+			*@param {nom du canvas, couleur du rectangle, position du rectangle} 
+			*/
+			const req = new XMLHttpRequest();
+			var convo = <%= cvr %>;
+
+		    function init(game, couleur,x ,y){
+				var g = document.getElementById(game);
+				var ctx = g.getContext('2d');
+				ctx.fillStyle = 'white';
+				ctx.fillRect(x, y, 750, 500);
+				ctx.fillStyle ='red';
+				ctx.font = "30px Verdana";
+				ctx.fillText(convo, 60, 60);
+			}
+		
+			/**
+			*Cette fonction initialise 3 rectangles de couleur pour représenter les 3 différents jeux
+			*/
+			function affichage(){
+				init('affiche', 'green', 10, 30);
+				//req.open('POST', '/accueil', true);
+				//req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				//req.send("hello");
+			} 
+		
+
+		</script>
+	</head>
+	<style>
+		.text-center{
+			text-align:center;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		</style>
+	
+	<body onload='affichage()'>
+		<form action="/interface" method="post">
+			<div class="text-center">
+			<canvas id="affiche" width="800" height="600"></canvas>	
+			</div>
+			<div class="text-center">
+				<label for="msg">Tapez votre message :</label>
+				<input type="text" id="msg" name="msg">
+			</div>
+			
+			<input type="submit" name="Envoyer" value="Envoyer" width="300">
+		</form>
+	</body>
+	
+</html>
+  
