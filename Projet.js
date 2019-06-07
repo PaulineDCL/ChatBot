@@ -6,7 +6,6 @@ var http = require('http');
 var url = require('url');
 app.set('view engine', 'ejs');
 const ReadLine = require('readline');
-const Chalk = require('chalk');
 const Riverscript = require('rivescript');
 const Steeve = new Riverscript();
 const Eude = new Riverscript();
